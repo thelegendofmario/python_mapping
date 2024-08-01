@@ -1,7 +1,7 @@
 import random
 from time import sleep
-rowNum = 10
-colNum = 10
+rowNum = 11
+colNum = 20
 playerCol = random.randint(1, 5)
 playerRow = random.randint(1, 5)
 playerDir = ""
@@ -32,7 +32,8 @@ def createMap():
 
 def printMap(mapFinal):
     for rowList in mapFinal:
-        print(rowList)
+        #print(rowList)
+        print(" ".join(rowList))
 
 #def checkDir(direc):
 
