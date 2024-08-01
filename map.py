@@ -1,12 +1,25 @@
 import random
+from time import sleep
 rowNum = 10
 colNum = 10
 playerCol = random.randint(1, 5)
 playerRow = random.randint(1, 5)
-from time import sleep
+playerDir = ""
+inputList = [
+    "up",
+    "w",
+    "down",
+    "s",
+    "left",
+    "a",
+    "right",
+    "d"
+]
+
 
 def createMap():
     mapFinal = []
+    grassList = [".", "_", "-"]
     for row in range(0,rowNum):
         rowList = []
         for column in range(0,colNum):
@@ -24,20 +37,22 @@ def printMap(mapFinal):
 #def checkDir(direc):
 
 
-while 1==1:
+while playerDir != "exit":
     createMap()
     #for debugging purposes
     #print(playerRow, playerCol)
     playerDir = input("please input a direction, or w, a, s, and d ")
     #checkDir(playerDir)
-    if playerDir == "up" or playerDir == "w":
+    if playerDir == inputList[0] or playerDir == inputList[1]:
         playerRow -= 1
-    elif playerDir == "down" or playerDir == "s":
+    elif playerDir == inputList[2] or playerDir == inputList[3]:
         playerRow += 1
-    elif playerDir == "left" or playerDir == "a":
+    elif playerDir == inputList[4] or playerDir == inputList[5]:
         playerCol -= 1
-    elif playerDir == "right" or playerDir == "d":
+    elif playerDir == inputList[6] or playerDir == inputList[7]:
         playerCol += 1
+    elif playerDir == "exit":
+        pass
     else:
         print("ERROR that was either not a direction or something else. try again.")
-        sleep(1)   
+        sleep(1)
